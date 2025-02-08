@@ -49,7 +49,11 @@ class StartScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: Column(
+      body: SizedBox(
+        width: MediaQuery.of(context).size.width,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             'Choose a menu to navigate',
@@ -67,8 +71,37 @@ class StartScreen extends StatelessWidget {
               style: Theme.of(context).textTheme.labelLarge,
             ),
           ),
+          ElevatedButton(
+            onPressed: () => _con.onPressedButtonDemo(context),
+            child: Text(
+              'Button Demo',
+              style: Theme.of(context).textTheme.labelLarge,
+            ),
+          ),
+          FilledButton.tonal(
+            onPressed: () => _con.onPressedFontDemo(context),
+            child: Text(
+              'Font Demo',
+              style: Theme.of(context).textTheme.labelLarge,
+            ),
+          ),
+          FilledButton.tonal(
+            onPressed: () => _con.onPressedRowColDemo(context),
+            child: Text(
+              'Row/Column Demo',
+              style: Theme.of(context).textTheme.labelLarge,
+            ),
+          ),
+          OutlinedButton(
+            onPressed: () => _con.onPressedBusinessCard(context),
+            child: Text(
+              'Business Card',
+              style: Theme.of(context).textTheme.labelLarge,
+            ),
+          ),
         ],
       ),
-    );
+    ),
+  );
   }
 }
